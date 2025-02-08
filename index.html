@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Registro</h2>
+        <form action="procesar_registro.php" method="POST" novalidate>
+            <!-- Campo para Nombre Completo -->
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+
+            <!-- Campo para Celular -->
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" name="celular" placeholder="Ingresa tu número de celular" pattern="[0-9]{10}" title="El número debe contener 10 dígitos" required>
+
+            <!-- Campo para Documento de Identidad -->
+            <label for="documento">Documento de Identidad:</label>
+            <input type="number" id="documento" name="documento" placeholder="Ingresa tu documento de identidad" required>
+
+            <!-- Campo para Correo Electrónico -->
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required>
+
+            <!-- Botón de Envío -->
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
